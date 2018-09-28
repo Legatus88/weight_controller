@@ -4,9 +4,6 @@ require 'sinatra/activerecord'
 require 'active_support'
 require 'haml'
 
-
-#set :database, "sqlite3:weight.sqlite3"
-
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
   username == 'sportsman' and password == 'sportsmans_password'
 end
