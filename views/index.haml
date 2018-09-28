@@ -1,0 +1,17 @@
+%h1= @title
+
+%form{ class: 'main_form', method: 'POST', action: '/record/new' } 
+  %p 
+    Введите ваш текущий вес:
+    %br
+    %input{ type: 'text', name: 'weight' }
+  %p 
+    Введите дату:
+    %br
+    %input{ type: 'date', name: 'record_date', value: "#{Date.today}" }
+  %p
+
+  %input{ type: 'submit', value: 'Подтвердить' }
+
+%div
+  %a{ href: '/list' } List
