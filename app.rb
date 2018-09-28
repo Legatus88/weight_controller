@@ -11,7 +11,7 @@ use Rack::Auth::Basic, "Restricted Area" do |username, password|
 end
 
 
-class MyApp < Sinatra::Base
+#class MyApp < Sinatra::Base
   get '/' do 
     @title = 'Новая запись'
     haml :index
@@ -38,6 +38,6 @@ class MyApp < Sinatra::Base
     @weights = Record.all.map(&:weight)
     haml :chart
   end
-end
+#end
 
 require './models'
