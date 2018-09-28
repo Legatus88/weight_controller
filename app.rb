@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'active_support'
+require 'haml'
 
 
 #set :database, "sqlite3:weight.sqlite3"
@@ -11,7 +12,7 @@ use Rack::Auth::Basic, "Restricted Area" do |username, password|
 end
 
 
-#class MyApp < Sinatra::Base
+class MyApp < Sinatra::Base
   get '/' do 
     @title = 'Новая запись'
     haml :index
@@ -38,6 +39,6 @@ end
     @weights = Record.all.map(&:weight)
     haml :chart
   end
-#end
+end
 
 require './models'
